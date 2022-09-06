@@ -2,13 +2,13 @@
 -----|| Name: Updated Asian Consumer CP Sales Report
 
 SELECT 
-	cast(dbo.ToBdt(Shipment.CreatedOn)as date)[CreatedOnDate],
-	cast(dbo.ToBdt(Shipment.ReconciledOn)as date)[ReconciledOnDate],
-	ProductVariant.Id ProductVariantId,
-	ProductVariant.Name ProductVariantName,
-	COUNT (ProductVariant.Id) Quantity,
-	ThingRequest.SalePrice SalePrice,
-	COUNT (ProductVariant.Id)*ThingRequest.SalePrice OrderValue
+	 cast(dbo.ToBdt(Shipment.CreatedOn)as date) [CreatedOnDate]
+	,cast(dbo.ToBdt(Shipment.ReconciledOn)as date)[ReconciledOnDate]
+	,ProductVariant.Id  [ProductVariantId]
+	,ProductVariant.Name [ProductVariantName]
+	,count (ProductVariant.Id) [Quantity]
+	,ThingRequest.SalePrice [SalePrice]
+	 count (ProductVariant.Id)*ThingRequest.SalePrice [OrderValue]
 	
 
 FROM
